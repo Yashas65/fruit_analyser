@@ -8,7 +8,7 @@ def model():
 
     model = load_model("my_fruit_model.h5")
 
-    img = image.load_img("banana_test.jpg", target_size=(224, 224))
+    img = image.load_img("image.jpg", target_size=(224, 224))
     img_array = np.expand_dims(image.img_to_array(img) / 255.0, axis=0)
 
     out = model.predict(img_array)
@@ -16,5 +16,12 @@ def model():
     out = out.flatten()
 
     lis = out.tolist()
-
-    print(f"fresh apple : {lis[0]} \n  fresh_banana : {lis[1]} \n raw_apple {lis[2]} \n raw_banana : {lis[3]}, \n rotten_apple : {lis[4]}, \n rotten_banana : {lis[5]}")
+    fruits = {
+    "fresh_apple" : lis[0],
+    "fresh_banana" : lis[1],
+    "raw_apple" : lis[2],
+    "raw_banana" : lis[3],
+    "rotten_apple" : lis[4],
+    "rotten_banana" : lis[5],
+    }
+    return fruits
