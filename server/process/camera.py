@@ -1,6 +1,8 @@
+#capturing the image and saving it 
+
 from picamera2 import Picamera2
 import time
-from model import model
+from .model import model
 def camera():
 
     cam = Picamera2()
@@ -12,9 +14,7 @@ def camera():
 
     time.sleep(1)
 
-    cam.capture_file("image.jpg")
+    cam.capture_file("process/image.jpg")
 
     print("saved")
-    model()
 
-camera()# temporary to be removed
