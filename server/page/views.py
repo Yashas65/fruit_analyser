@@ -11,8 +11,11 @@ def show_results(request):
 
     from process.camera import camera
     camera()
+ 
     from process.model import model
     time.sleep(1)# just in case if pendrive/sdcard is slow
+    
+
     out = model()
     max_out = max(out)
     
